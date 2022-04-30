@@ -176,16 +176,15 @@ namespace AcademyF.Week2.Prodotti_Alim_Tecnol.Repository
 
 
 
-        public static void VisalizzaGiornoScadenzOggi()
+ public static void VisalizzaGiornoScadenzOggi()
         {
             int n = -1;
             var listaAlim = repoAlim.GetAll();
-            DateTime dataOggi = DateTime.Now;
-            int day = dataOggi.Day;
+
             for (int i = 0; i < listaAlim.Count; i++)
             {
-                int data_alim = listaAlim[i].Data_scadenza.Day;
-                if (data_alim==day) {
+                int data_alim = listaAlim[i].GiorniMancDataScaden();
+                if ((data_alim == 0)) {
                     n = 1;
                     Console.WriteLine(listaAlim[i].Disegno());
                 }
@@ -195,7 +194,6 @@ namespace AcademyF.Week2.Prodotti_Alim_Tecnol.Repository
                 Console.WriteLine("Non presenta la scadenza del giorno di oggi");
             }
         }
-
         private static void AggiungiAlim()
         {
             Console.WriteLine("Inserisci nuovo Alimentare");
