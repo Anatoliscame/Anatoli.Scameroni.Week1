@@ -12,9 +12,7 @@ namespace GestioneSpese.Repository
     {
         static string connectionStringSQL = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GestioneSpese;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-
-
-        public static void ConnectionDemo()
+         public static void ConnectionDemo()
         {
 
             using SqlConnection connessione = new SqlConnection(connectionStringSQL);
@@ -226,9 +224,7 @@ namespace GestioneSpese.Repository
                     var idCategorie = reader.GetInt32(6);
 
                     Console.WriteLine($"{id} - {data} - {descrizione} - {utente_s} - {importo} - {approvato} - {idCategorie}");
-
-
-                }
+                    }
             }
 
             catch (Exception ex)
