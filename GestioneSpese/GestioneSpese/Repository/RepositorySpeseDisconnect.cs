@@ -167,6 +167,57 @@ namespace GestioneSpese.Repository
 
 
 
+        public static void ElencoSpeseDiUnUtenteDisconnect2()
+        {
+            DataSet personalDB = new DataSet();
+
+            using SqlConnection conn = new SqlConnection(connectionStringSQL);
+            try
+            {
+                conn.Open();
+                if (conn.State == System.Data.ConnectionState.Open)
+                    Console.WriteLine("Connessi al DB");
+                else
+                    Console.WriteLine("Non Connessi al DB");
+                string utente_n = Console.ReadLine();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.Text;
+                command.CommandText = "select * from Spese where Utente = @utenteSpese";
+                //command.Parameters.Add(new SqlParameter("@utenteSpese", SqlDbType.VarChar, 100, "Utente"));
+                command.Parameters.AddWithValue("@utenteSpese", utente_n);
+                SqlDataAdapter personalAdapter = new SqlDataAdapter();
+                personalAdapter.SelectCommand = command;
+                personalAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+                personalAdapter.Fill(personalDB, "SpeseDT");
+                conn.Close();
+                Console.WriteLine("Connessione chiusa");
+
+
+                //DataRow rigaParametr = personalDB.Tables["SpeseDT"].NewRow().GetParentRow(utente_n);
+
+
+                foreach (DataRow riga in personalDB.Tables["SpeseDT"].Rows)
+                {
+                    Console.WriteLine($"{riga["Id"]} - {riga["Data"]} - {riga["Descrizione"]} - {riga["Utente"]} - {riga["Importo"]}");
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Errore generico: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Errore generico: {ex.Message}");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
 
 
