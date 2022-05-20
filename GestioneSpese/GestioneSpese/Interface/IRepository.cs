@@ -14,5 +14,7 @@ namespace GestioneSpese.Interface
         public T Add(T item);
         public T Update(T item);
         public bool Delete(T item);
+        public void ElencoSpeseDiUnUtenteEF();
+        public void SpesaTotalePerUnaCategoriaEF();
     }
 }
