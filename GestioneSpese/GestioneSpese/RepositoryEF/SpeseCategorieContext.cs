@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace GestioneSpese.RepositoryEF
 {
-    internal class SpeseCategorieContext : DbContext
+  internal class GestioneSpeseCategorieContext : DbContext
     {
 
         public DbSet<Spese> Spese { get; set; }
         public DbSet<Categorie> Categorie { get; set; }
 
 
-        public SpeseCategorieContext() { }
+        public GestioneSpeseCategorieContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionalBuilder)
         {
@@ -30,5 +30,5 @@ namespace GestioneSpese.RepositoryEF
  
         }
     }
-}
+   }
 
