@@ -165,7 +165,54 @@ namespace GestioneSpese.Repository
         }
 
 
+  public static void SpesaTotalePerUnaCategoriaDisconnect()
+        {
+            DataSet personalDB = new DataSet();
 
+            using SqlConnection conn = new SqlConnection(connectionStringSQL);
+            try
+            {
+                conn.Open();
+                if (conn.State == System.Data.ConnectionState.Open)
+                    Console.WriteLine("Connessi al DB");
+                else
+                    Console.WriteLine("Non Connessi al DB");
+                //  string utente_n = Console.ReadLine();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.Text;
+                decimal somma = 0;
+                command.CommandText = "select c.Categoria, SUM(s.Importo) as 'Somma' from Spese s, Categorie c  where (c.Id = s.CategoriaId) group by c.Categoria";
+               SqlDataAdapter personalAdapter = new SqlDataAdapter();
+                personalAdapter.SelectCommand = command;
+                personalAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+                personalAdapter.Fill(personalDB, "SpeseDT");
+                conn.Close();
+                Console.WriteLine("Connessione chiusa");
+
+    
+                foreach (DataRow riga in personalDB.Tables["SpeseDT"].Rows)
+                {
+                
+                    Console.WriteLine($"{riga["Categoria"]} - {riga["Somma"]}");
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Errore generico: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Errore generico: {ex.Message}");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public static void ElencoSpeseDiUnUtenteDisconnect2()
         {
