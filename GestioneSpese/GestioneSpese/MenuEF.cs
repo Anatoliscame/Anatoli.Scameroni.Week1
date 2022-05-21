@@ -39,10 +39,10 @@ namespace GestioneSpese
                    InserisciNuovoCategorie();
                     break;
                 case 3:                   
-                    // ModificaCorso();
+             
                     break;
                 case 4:  
-                    // EliminaCorso();
+             
                     break;
                 case 5: 
                     VisualizzaElencoCompletoSpese();
@@ -50,15 +50,6 @@ namespace GestioneSpese
                     break;
                 case 6:
                    InserisciNuovoSpese();
-                    break;
-                case 7:
-         
-                    break;
-                case 8:
-               
-                    break;
-                case 9:
-                    VisualistaCategorieApartenetiAdUnSpese();
                     break;
                 case 0:
                     return false;
@@ -198,38 +189,6 @@ namespace GestioneSpese
         }
 
 
-        private static void VisualistaCategorieApartenetiAdUnSpese()
-        {
-             Console.WriteLine("Ecco l'elenco dei Categorie:");
-            VisualizzaCategorie();
-            Console.WriteLine("Inserire ID di Categoria");
-            int idCategorie;
-            while (!(int.TryParse(Console.ReadLine(), out idCategorie)))
-            {
-                Console.WriteLine("Scelta errata. Inserisci scelta corretta: ");
-            }
-
-            List<Spese> lista = bl.GetSpeseById(idCategorie);
-            if (lista == null)
-            {
-                Console.WriteLine("Id Categoria errato!");
-            }
-            if (lista.Count == 0)
-            {
-                Console.WriteLine("Nessuno studente iscritto a questo corso!");
-            }
-            else
-            {
-                foreach (var item in lista)
-                {
-                    Console.WriteLine(item);
-                }
-            }
-
-        }
-
-
-
 
         private static int SchermoMenu()
         {
@@ -245,7 +204,6 @@ namespace GestioneSpese
             Console.WriteLine("6. Inserimento nuovo Spese");
             Console.WriteLine("7. Modifica Spese");//per semplicità solo email
             Console.WriteLine("8. Elimina Spese");
-            Console.WriteLine("9. Visualizza l'elenco degli Spese iscritti ad un Categorie");
             Console.WriteLine("\n0. Exit");
 
             int scelta;
