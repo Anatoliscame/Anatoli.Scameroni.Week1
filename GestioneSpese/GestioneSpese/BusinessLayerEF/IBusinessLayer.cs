@@ -21,7 +21,7 @@ namespace GestioneSpese.BusinessLayerEF
         Spese InserisciNuovoSpese(Spese nuovoSpese);
         Spese ModificaDescrizioneSpese(int Id, string? descr);
         Spese EliminaSpese(int Id);
-        List<Spese> GetSpeseById(int Id);
+
 
     }
 }
