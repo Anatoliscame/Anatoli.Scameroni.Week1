@@ -7,53 +7,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace GestioneSpese.RepositoryEF
 {
-    internal class RepositorySpeseEF : IRepositorySpese
+    public class RepositoryCategorieEF : IRepositoryCategorie
     {
-        public Spese Add(Spese item)
+        public Categorie Add(Categorie item)
         {
-            using (var ctx = new SpeseCategorieContext())
+            using (var ctx = new GestioneSpeseCategorieContext())
             {
-                ctx.Spese.Add(item);
+                ctx.CategorieArray.Add(item);
                 ctx.SaveChanges();
             }
             return item;
         }
 
-        public bool Delete(Spese item)
+        public bool Delete(Categorie item)
         {
-            using (var ctx = new SpeseCategorieContext())
+            using (var ctx = new GestioneSpeseCategorieContext())
             {
-                ctx.Spese.Remove(item);
+                ctx.CategorieArray.Remove(item);
                 ctx.SaveChanges();
             }
             return true;
         }
 
-        public ICollection<Spese> GetAll()
+        public void ElencoSpeseDiUnUtenteEF()
         {
-            using (var ctx = new SpeseCategorieContext())
-            {
-                return ctx.Spese.Include(p => p.Categoria).ToList();
-
-            }
+            throw new NotImplementedException();
         }
 
-        public Spese GetById(int id)
+        public ICollection<Categorie> GetAll()
         {
             using (var ctx = new GestioneSpeseCategorieContext())
             {
-                //  return ctx.SpeseArray.Include(x => x.Categoria).FirstOrDefault(p => p.CategoriaId == id);
-                return null;
+                return ctx.CategorieArray.Include(p => p.SpeseaArray).ToList();
+
             }
         }
 
-        public Spese Update(Spese item)
+        public Categorie GetByIdC(int id)
         {
-            using (var ctx = new SpeseCategorieContext())
+
+            ///return GetAll().FirstOrDefault(c => c.Id == id);
+            using (var ctx = new GestioneSpeseCategorieContext())
             {
-                ctx.Spese.Update(item);
+                return ctx.CategorieArray.Include(x => x.SpeseaArray).FirstOrDefault(c => c.Id == id);
+            
+            }
+        }
+
+        public void SpesaTotalePerUnaCategoriaEF()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Categorie Update(Categorie item)
+        {
+            using (var ctx = new GestioneSpeseCategorieContext())
+            {
+                ctx.CategorieArray.Update(item);
                 ctx.SaveChanges();
             }
             return item;
