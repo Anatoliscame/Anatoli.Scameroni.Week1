@@ -9,25 +9,26 @@ using System.Threading.Tasks;
 
 
 
+
 namespace GestioneSpese.RepositoryEF
 {
-    public class RepositoryCategorieEF : IRepositoryCategorie
+    public class RepositorySpeseEF : IRepositorySpese
     {
-        public Categorie Add(Categorie item)
+        public Spese Add(Spese item)
         {
             using (var ctx = new GestioneSpeseCategorieContext())
             {
-                ctx.CategorieArray.Add(item);
+                ctx.SpeseArray.Add(item);
                 ctx.SaveChanges();
             }
             return item;
         }
 
-        public bool Delete(Categorie item)
+        public bool Delete(Spese item)
         {
             using (var ctx = new GestioneSpeseCategorieContext())
             {
-                ctx.CategorieArray.Remove(item);
+                ctx.SpeseArray.Remove(item);
                 ctx.SaveChanges();
             }
             return true;
@@ -38,23 +39,21 @@ namespace GestioneSpese.RepositoryEF
             throw new NotImplementedException();
         }
 
-        public ICollection<Categorie> GetAll()
+        public ICollection<Spese> GetAll()
         {
             using (var ctx = new GestioneSpeseCategorieContext())
             {
-                return ctx.CategorieArray.Include(p => p.SpeseaArray).ToList();
+                return ctx.SpeseArray.Include(p => p.Categoria).ToList();
 
             }
         }
 
-        public Categorie GetByIdC(int id)
+        public Spese GetById(int id)
         {
-
-            ///return GetAll().FirstOrDefault(c => c.Id == id);
             using (var ctx = new GestioneSpeseCategorieContext())
             {
-                return ctx.CategorieArray.Include(x => x.SpeseaArray).FirstOrDefault(c => c.Id == id);
-            
+                //  return ctx.SpeseArray.Include(x => x.Categoria).FirstOrDefault(p => p.CategoriaId == id);
+                return null;
             }
         }
 
@@ -63,14 +62,19 @@ namespace GestioneSpese.RepositoryEF
             throw new NotImplementedException();
         }
 
-        public Categorie Update(Categorie item)
+        public Spese Update(Spese item)
         {
             using (var ctx = new GestioneSpeseCategorieContext())
             {
-                ctx.CategorieArray.Update(item);
+                ctx.SpeseArray.Update(item);
                 ctx.SaveChanges();
             }
             return item;
+        }
+
+        Spese IRepositorySpese.GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
