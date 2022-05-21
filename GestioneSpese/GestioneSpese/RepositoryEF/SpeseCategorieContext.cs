@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace GestioneSpese.RepositoryEF
 {
-  internal class GestioneSpeseCategorieContext : DbContext
+    public class GestioneSpeseCategorieContext : DbContext
     {
 
-        public DbSet<Spese> Spese { get; set; }
-        public DbSet<Categorie> Categorie { get; set; }
+        public DbSet<Spese> SpeseArray { get; set; }
+        public DbSet<Categorie> CategorieArray { get; set; }
 
 
         public GestioneSpeseCategorieContext() { }
@@ -30,5 +30,6 @@ namespace GestioneSpese.RepositoryEF
  
         }
     }
-   }
+}
+
 
