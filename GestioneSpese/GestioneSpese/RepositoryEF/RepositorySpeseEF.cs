@@ -40,12 +40,12 @@ namespace GestioneSpese.RepositoryEF
             }
         }
 
-        public int GetById(int id)
+        public Spese GetById(int id)
         {
-            using (var ctx = new SpeseCategorieContext())
+            using (var ctx = new GestioneSpeseCategorieContext())
             {
-                //  return ctx.Spese.Include(x => x.Categoria).FirstOrDefault(p => p.CategoriaId == id);
-                return 0;
+                //  return ctx.SpeseArray.Include(x => x.Categoria).FirstOrDefault(p => p.CategoriaId == id);
+                return null;
             }
         }
 
