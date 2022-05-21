@@ -2,13 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+
 namespace GestioneSpese.Configuration
 {
-    internal class SpeseConfiguration : IEntityTypeConfiguration<Spese>
+    public class SpeseConfiguration : IEntityTypeConfiguration<Spese>
     {
         public void Configure(EntityTypeBuilder<Spese> builder)
         {
-           builder.ToTable("Spese");
+            builder.ToTable("Spese");
             builder.HasKey(d => d.Id);
             builder.Property(d => d.Data).IsRequired();
             builder.Property(d => d.Descrizione).IsRequired().HasMaxLength(500);
@@ -17,7 +18,8 @@ namespace GestioneSpese.Configuration
             builder.Property(d => d.Approvato).IsRequired();
     
       
-            builder.HasOne(r => r.Categoria).WithMany(d => d.Spese).HasForeignKey(r => r.CategoriaId).HasConstraintName("SpeseCategorieOneMany");
+            builder.HasOne(r => r.Categoria).WithMany(d => d.SpeseaArray).HasForeignKey(r => r.CategoriaId).HasConstraintName("SpeseCategorieOneMany");
+
         }
     }
 }
