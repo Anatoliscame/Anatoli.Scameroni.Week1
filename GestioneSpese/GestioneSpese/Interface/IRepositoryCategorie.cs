@@ -9,6 +9,6 @@ namespace GestioneSpese.Interface
 {
     internal interface IRepositoryCategorie : IRepository<Categorie>
     {
-        public int GetById(int id);
+       public Categorie GetByIdC(int id);
     }
 }
