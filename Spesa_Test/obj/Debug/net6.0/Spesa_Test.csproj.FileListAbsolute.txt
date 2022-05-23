@@ -1,0 +1,15 @@
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\bin\Debug\net6.0\Spesa_Test.exe
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\bin\Debug\net6.0\Spesa_Test.deps.json
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\bin\Debug\net6.0\Spesa_Test.runtimeconfig.json
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\bin\Debug\net6.0\Spesa_Test.dll
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\bin\Debug\net6.0\Spesa_Test.pdb
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.csproj.AssemblyReference.cache
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.AssemblyInfoInputs.cache
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.AssemblyInfo.cs
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.csproj.CoreCompileInputs.cache
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.dll
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\refint\Spesa_Test.dll
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.pdb
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\Spesa_Test.genruntimeconfig.cache
+C:\Users\Anatoli\source\repos\Spesa_Test\Spesa_Test\Spesa_Test\obj\Debug\net6.0\ref\Spesa_Test.dll

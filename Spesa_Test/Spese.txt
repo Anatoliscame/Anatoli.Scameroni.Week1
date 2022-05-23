@@ -1,0 +1,9 @@
+﻿03.02.2000 0:00:00 - Alloggio - Turistica in Italia - 2100
+03.02.2000 0:00:00 - Viaggio - Benvenuti in Sardegna - 350
+03.02.2000 0:00:00 - Alloggio - Turistica in Italia - 600
+03.02.2000 0:00:00 - Viaggio - Turistica in Italia - 200
+03.02.2000 0:00:00 - Viaggio - Turistica in Italia - 450
+03.02.2000 0:00:00 - Vitto - Turistica in Italia - 2100
+03.02.2000 0:00:00 - Alloggio - Turistica in Italia - 3500
+03.02.2000 0:00:00 - Vitto - Turistica in Italia - 100
+03.02.2000 0:00:00 - Altro - Turistica in Italia - 5
