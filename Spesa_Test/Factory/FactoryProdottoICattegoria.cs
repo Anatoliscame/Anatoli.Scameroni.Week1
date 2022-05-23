@@ -38,36 +38,5 @@ namespace Spesa_Test.Factory
             // return "" + scelta_cattegoria.Disegno();
             return scelta_cattegoria;
         }
-
-        public string importoRimborsatoIString(string NomeCattegoria)
-        {
-
-
-            ICategoria scelta_cattegoria = null;
-
-            switch (NomeCattegoria)
-            {
-
-                case "Viaggio":
-
-                    scelta_cattegoria = new Viaggio();
-
-                    break;
-                case "Alloggio":
-
-                    scelta_cattegoria = new Alloggio();
-                    break;
-
-                case "Vitto":
-
-                    scelta_cattegoria = new Vitto();
-                    break;
-
-                default:
-                    return "NULL";
-            }
-            return scelta_cattegoria.nomeC();
-            //return scelta_cattegoria;
-        }
     }
 }
